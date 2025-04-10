@@ -1,227 +1,181 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Memese Store</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEMESE Store</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Montserrat', sans-serif;
-    }
-
     body {
       background-color: #111;
       color: white;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
     }
 
     header {
       background-color: #000;
-      padding: 20px 40px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
+      padding: 20px;
+      text-align: center;
     }
 
-    .logo {
-      font-size: 28px;
-      font-weight: 700;
+    header h1 {
       color: red;
       font-style: italic;
+      font-size: 36px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: #000;
+      padding: 10px 0;
+      gap: 20px;
     }
 
     nav a {
       color: white;
-      margin-left: 20px;
       text-decoration: none;
-      font-weight: 500;
-    }
-
-    .hero {
-      background: url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .hero h1 {
-      font-size: 48px;
-      color: white;
-      background-color: rgba(0, 0, 0, 0.6);
-      padding: 20px;
-      border-radius: 8px;
+      font-weight: bold;
     }
 
     section {
-      padding: 40px;
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
     }
 
-    .category-title {
-      font-size: 32px;
+    section h2 {
+      color: red;
+      font-size: 28px;
       margin-bottom: 20px;
-      border-bottom: 2px solid red;
+      font-style: italic;
+      border-bottom: 1px solid red;
       padding-bottom: 10px;
     }
 
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
     }
 
     .product {
       background-color: #222;
-      padding: 20px;
       border-radius: 10px;
+      padding: 20px;
       text-align: center;
     }
 
     .product img {
       width: 100%;
-      height: 250px;
-      object-fit: cover;
-      border-radius: 8px;
+      border-radius: 10px;
     }
 
     .product h3 {
+      color: red;
       margin-top: 15px;
-      font-size: 20px;
-      font-weight: 600;
     }
 
     .product p {
-      color: #aaa;
-      margin-top: 5px;
+      color: #ccc;
       font-size: 14px;
     }
 
-    .product button,
-    .product form button {
-      margin-top: 10px;
-      padding: 10px 20px;
+    .product button {
       background-color: red;
-      border: none;
       color: white;
-      font-weight: bold;
+      border: none;
+      padding: 10px 20px;
       border-radius: 5px;
+      font-weight: bold;
       cursor: pointer;
+      margin-top: 10px;
     }
 
     footer {
       background-color: #000;
+      color: #777;
       text-align: center;
       padding: 20px;
-      font-size: 14px;
-      color: #666;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="logo">memese</div>
-    <nav>
-      <a href="#koszulki">Koszulki</a>
-      <a href="#bluzy">Bluzy</a>
-      <a href="#buty">Buty</a>
-      <a href="#akcesoria">Akcesoria</a>
-      <a href="#tech">Technologia</a>
-      <a href="#kontakt">Kontakt</a>
-    </nav>
+    <h1>MEMESE STORE</h1>
   </header>
 
-  <section class="hero">
-    <h1>Ubierz się jak mem. Bądź memese.</h1>
-  </section>
+  <nav>
+    <a href="#koszulki">Koszulki</a>
+    <a href="#bluzy">Bluzy</a>
+    <a href="#buty">Buty</a>
+    <a href="#tech">Technologia</a>
+  </nav>
 
   <section id="koszulki">
-    <h2 class="category-title">Koszulki</h2>
+    <h2>Koszulki</h2>
     <div class="products">
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1602810318297-9bdfcd6fbdad?auto=format&fit=crop&w=800&q=80" alt="Koszulka Memese Classic" />
-        <h3><h3><a href="produkt-koszulka.html" style="color: white; text-decoration: none;">Koszulka Memese Classic</a></h3>
-</h3>
-        <p>Stylowa czarna koszulka z czerwonym logo.</p>
-        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-          <input type="hidden" name="cmd" value="_xclick">
-          <input type="hidden" name="business" value="twoj-email@paypal.com">
-          <input type="hidden" name="item_name" value="Koszulka Memese Classic">
-          <input type="hidden" name="amount" value="69.00">
-          <input type="hidden" name="currency_code" value="PLN">
-          <button type="submit">Kup teraz przez PayPal</button>
-        </form>
+        <img src="https://images.unsplash.com/photo-1593032465171-ae7f34e1c191?fit=crop&w=800&h=800" alt="Koszulka MEMESE czarna">
+        <h3>Czarna Koszulka MEMESE</h3>
+        <p>Streetwear styl, 100% bawełna, czerwony pochyły napis "MEMESE". Idealna do miasta, szkoły i chillowania.</p>
+        <p><strong>Cena: 99 zł</strong></p>
+        <a href="https://www.printful.com/dashboard/product-templates/87331827" target="_blank"><button>Kup teraz</button></a>
+      </div>
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1618354691373-cc56ae9f689c?auto=format&fit=crop&w=800&q=80" alt="Koszulka MEMESE On The Top">
+        <h3>Koszulka MEMESE "On The Top"</h3>
+        <p>Najnowszy drop MEMESE – edycja z napisem "On The Top". Czerwony nadruk, premium bawełna, styl totalny 🔥</p>
+        <p><strong>Cena: 109 zł</strong></p>
+        <a href="https://www.printful.com/dashboard/product-templates/87332774" target="_blank"><button>Kup teraz</button></a>
       </div>
     </div>
   </section>
 
   <section id="bluzy">
-    <h2 class="category-title">Bluzy</h2>
+    <h2>Bluzy</h2>
     <div class="products">
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=800&q=80" alt="Bluza Memese" />
-        <h3>Bluza Memese Oversize</h3>
-        <p>Luźna czarna bluza z wyhaftowanym logiem Memese.</p>
-        <button>Kup teraz</button>
+        <img src="https://images.unsplash.com/photo-1583749744477-f97efb29e1c5?auto=format&fit=crop&w=800&q=80" alt="Bluza MEMESE">
+        <h3>Bluza MEMESE Hoodie</h3>
+        <p>Wygodna bluza z kapturem w kolorze czarnym z czerwonym logo MEMESE. Styl oversize, unisex. 100% bawełna ☁️</p>
+        <p><strong>Cena: 199 zł</strong></p>
+        <button disabled>Kup teraz (wkrótce)</button>
       </div>
     </div>
   </section>
 
   <section id="buty">
-    <h2 class="category-title">Buty</h2>
+    <h2>Buty</h2>
     <div class="products">
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1585386959984-a4155222f7c8?auto=format&fit=crop&w=800&q=80" alt="Buty Memese RedKick" />
-        <h3>Buty Memese RedKick</h3>
-        <p>Unikalne sneakersy z czerwonym akcentem.</p>
-        <button>Kup teraz</button>
-      </div>
-    </div>
-  </section>
-
-  <section id="akcesoria">
-    <h2 class="category-title">Akcesoria</h2>
-    <div class="products">
-      <div class="product">
-        <img src="https://images.unsplash.com/photo-1579208575657-c595a05383b7?auto=format&fit=crop&w=800&q=80" alt="Łańcuszek Memese Ice" />
-        <h3>Łańcuszek Memese Ice</h3>
-        <p>Błyszczący łańcuszek dla prawdziwych bossów.</p>
-        <button>Kup teraz</button>
+        <img src="https://images.unsplash.com/photo-1589983846997-416d795c94c8?auto=format&fit=crop&w=800&q=80" alt="Buty MEMESE">
+        <h3>Buty Memese Runner</h3>
+        <p>Stylowe, lekkie sneakersy z czerwoną linią. Idealne do miasta, szkoły i biegania. Rozmiary 36–46.</p>
+        <p><strong>Cena: 349 zł</strong></p>
+        <button disabled>Kup teraz (wkrótce)</button>
       </div>
     </div>
   </section>
 
   <section id="tech">
-    <h2 class="category-title">Technologia</h2>
+    <h2>Technologia</h2>
     <div class="products">
       <div class="product">
-        <img src="https://images.unsplash.com/photo-1587202372775-a7073e6f2c09?auto=format&fit=crop&w=800&q=80" alt="Laptop Memese" />
-        <h3>Laptop Memese Pro</h3>
-        <p>Szybki jak Ty. Komputer do montażu memów i gier.</p>
-        <button>Kup teraz</button>
+        <img src="https://images.unsplash.com/photo-1611186871348-bd9d7c9bb26e?auto=format&fit=crop&w=800&q=80" alt="Laptop MEMESE">
+        <h3>Laptop Memese Gaming Beast</h3>
+        <p>Laptop z RTX 3060 i procesorem Intel i7. 16GB RAM, 1TB SSD, RGB podświetlenie. Idealny do gier i montażu 🔥</p>
+        <p><strong>Cena: 6 999 zł</strong></p>
+        <button disabled>Kup teraz (wkrótce)</button>
       </div>
     </div>
   </section>
 
-  <section id="kontakt" style="padding: 40px; text-align: center;">
-    <h2>Skontaktuj się z nami</h2>
-    <form action="https://formspree.io/f/mwkgyvvg" method="POST" style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
-      <input type="text" name="name" placeholder="Twoje imię" required style="padding: 10px;">
-      <input type="email" name="email" placeholder="Twój email" required style="padding: 10px;">
-      <textarea name="message" placeholder="Wiadomość" rows="5" required style="padding: 10px;"></textarea>
-      <button type="submit" style="padding: 10px; background-color: red; color: white; border: none; cursor: pointer;">Wyślij</button>
-    </form>
-  </section>
-
   <footer>
-    &copy; 2025 Memese. Wszystkie prawa zastrzeżone.
+    &copy; 2025 MEMESE Store. Wszystkie prawa zastrzeżone.
   </footer>
 </body>
 </html>
-
       
 
