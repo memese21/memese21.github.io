@@ -3,31 +3,35 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>memese.pl – Sklep Wojownika</title>
+  <title>memese.pl – memeseshop</title>
   <style>
     body {
       background-color: #111;
       color: #fff;
       font-family: sans-serif;
       margin: 0;
-      padding: 20px;
+      padding: 40px;
     }
     h1 {
       text-align: center;
-      margin-bottom: 40px;
+      margin-bottom: 60px;
       color: #e60000;
     }
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 30px;
+      gap: 45
+        
+
+        
+      px;
     }
     .product {
       background-color: #1a1a1a;
-      padding: 15px;
-      border-radius: 10px;
+      padding: 20px;
+      border-radius: 20px;
       text-align: center;
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
     }
     .product img {
       width: 100%;
@@ -41,24 +45,24 @@
   </style>
 </head>
 <body>
-  <h1>memese.pl – Sklep Wojownika</h1>
+  <h1>memese.pl – memeseshop</h1>
   <div class="products">
     <div class="product">
       <img src="https://i.imgur.com/3Pl8XqW.jpg" alt="Perfum JPG">
       <h3>JPG Perfum</h3>
-      <h2>JPG Perfumy - 50 PLN</h2>
+      <h2>JPG Perfumy - 65 PLN</h2>
 <p>Dostawa za pobraniem (płatność przy odbiorze)</p>
 <button onclick="zamowienie('JPG Perfumy')">Kup teraz</button>
 
-<h2>SWY Intensely - 50 PLN</h2>
+<h2>SWY Intensely - 60 PLN</h2>
 <p>Dostawa za pobraniem (płatność przy odbiorze)</p>
 <button onclick="zamowienie('SWY Intensely')">Kup teraz</button>
 
 <script>
   function zamowienie(produkt) {
-    const dane = prompt("Podaj swoje imię, adres dostawy i numer telefonu:");
+    const dane = prompt("Podaj swój  adres dostawy i numer telefonu:");
     if (dane) {
-      alert("Dziękujemy za zamówienie " + produkt + "! Skontaktujemy się z Tobą.");
+      alert("Dziękujemy za zamówienie " + produkt + "! Skontaktujemy się z Tobą jesli coś poszlo nie tak wyslij wiadomość na "kamilwas112@wp.pl".");
       // Tu można w przyszłości dodać wysyłkę danych do maila lub serwera
     }
   }
@@ -78,7 +82,7 @@
 
 <script>
   function zamowienie(produkt) {
-    const dane = prompt("Podaj swoje imię, adres dostawy i numer telefonu:");
+    const dane = prompt("Podaj swój adres dostawy i numer telefonu jesli coś poszło nie tak zkontaktuj sie z nami na "kamilwas112@wp.pl":");
     if (dane) {
       alert("Dziękujemy za zamówienie " + produkt + "! Skontaktujemy się z Tobą.");
       // Tu można w przyszłości dodać wysyłkę danych do maila lub serwera
@@ -90,7 +94,7 @@
     <div class="product">
       <img src="https://
         
-        <h2>Koszulka Memese - 79 PLN</h2>
+        <h2>Koszulka Memese - 70 PLN</h2>
 <img src="koszulka.jpg" alt="Koszulka Memese" width="200">
 <p>Dostawa za pobraniem (płatność przy odbiorze)</p>
 <button onclick="zamowienie('Koszulka Memese')">Kup teraz</button>
