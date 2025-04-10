@@ -98,4 +98,42 @@
 <img src="koszulka.jpg" alt="Koszulka Memese" width="200">
 <p>Dostawa za pobraniem (płatność przy odbiorze)</p>
 <button onclick="zamowienie('Koszulka Memese')">Kup teraz</button>
+      <div class="product">
+  <img src="perfum1.jpg" alt="Perfum A" width="200" />
+  <h2>Perfum A</h2>
+  <p><strong>Opis:</strong> Świeży zapach z nutami cytrusów, mięty i drzewa sandałowego. Idealny na lato.</p>
+  <p><strong>Trwałość:</strong> 6-8 godzin</p>
+  <p><strong>Okazje:</strong> Codzienne użytkowanie, spotkania</p>
+</div>
+      <h2>Zamów teraz</h2>
+<form action="https://formsubmit.co/youremail@example.com" method="POST">
+  <label>Imię i nazwisko:</label><br>
+  <input type="text" name="name" required><br>
+
+  <label>Adres email:</label><br>
+  <input type="email" name="email" required><br>
+
+  <label>Adres dostawy:</label><br>
+  <textarea name="address" required></textarea><br>
+
+  <label>Produkt:</label><br>
+  <select name="product">
+    <option value="Perfum A">Perfum A</option>
+    <option value="Perfum B">Perfum B</option>
+  </select><br>
+
+  <label>Metoda płatności:</label><br>
+  <input type="radio" name="payment" value="Za pobraniem" checked> Za pobraniem<br>
+  <input type="radio" name="payment" value="BLIK"> BLIK<br>
+  <input type="radio" name="payment" value="Przelew"> Przelew<br><br>
+
+  <button type="submit">Zamów</button>
+</form>
+      <h3>Metody płatności:</h3>
+<ul>
+  <li>💵 Za pobraniem</li>
+  <li>📱 BLIK (poprosimy Cię o kod po zamówieniu)</li>
+  <li>🏦 Przelew bankowy (dane wysyłamy na e-mail)</li>
+</ul>
+      
 
