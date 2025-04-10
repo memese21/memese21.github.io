@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koszulka Memese Classic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background-color: #111;
+      color: white;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h1 {
+      color: red;
+      font-style: italic;
+      font-size: 36px;
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin: 20px 0;
+    }
+
+    p {
+      font-size: 16px;
+      color: #ccc;
+    }
+
+    button {
+      margin-top: 20px;
+      padding: 12px 24px;
+      background-color: red;
+      color: white;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    a {
+      color: white;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 30px;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Koszulka Memese Classic</h1>
+    <img src="https://images.unsplash.com/photo-1602810318297-9bdfcd6fbdad?auto=format&fit=crop&w=800&q=80" alt="Koszulka Memese Classic">
+    <p>
+      Klasyczna czarna koszulka z czerwonym napisem <strong>memese</strong> pochyłą czcionką.  
+      Wysoka jakość materiału. Idealna na każdą okazję.  
+      Unisex. Rozmiary: S, M, L, XL.
+    </p>
+    <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+      <input type="hidden" name="cmd" value="_xclick">
+      <input type="hidden" name="business" value="twoj-email@paypal.com">
+      <input type="hidden" name="item_name" value="Koszulka Memese Classic">
+      <input type="hidden" name="amount" value="69.00">
+      <input type="hidden" name="currency_code" value="PLN">
+      <button type="submit">Kup teraz przez PayPal</button>
+    </form>
+    <a href="index.html">&larr; Wróć do sklepu</a>
+  </div>
+</body>
+</html>
