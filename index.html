@@ -2,183 +2,149 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>memese.pl – memeseshop</title>
-  <style>
-    body {
-      background-color: #111;
-      color: #fff;
-      font-family: sans-serif;
-      margin: 0;
-      padding: 40px;
-    }
-    h1 {
-      text-align: center;
-      margin-bottom: 60px;
-      color: #e60000;
-    }
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 45
-        
-
-        
-      px;
-    }
-    .product {
-      background-color: #1a1a1a;
-      padding: 20px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-    }
-    .product img {
-      width: 100%;
-      border-radius: 10px;
-      margin-bottom: 10px;
-    }
-    .price {
-      color: #aaa;
-      font-weight: bold;
-    }
-  </style>
-</head>
-<body>
-  <h1>memese.pl – memeseshop</h1>
-  <div class="products">
-    <div class="product">
-      <img src="https://i.imgur.com/3Pl8XqW.jpg" alt="Perfum JPG">
-      <h3>JPG Perfum</h3>
-      <h2>JPG Perfumy - 65 PLN</h2>
-<p>Dostawa za pobraniem (płatność przy odbiorze)</p>
-<button onclick="zamowienie('JPG Perfumy')">Kup teraz</button>
-
-<h2>SWY Intensely - 60 PLN</h2>
-<p>Dostawa za pobraniem (płatność przy odbiorze)</p>
-<button onclick="zamowienie('SWY Intensely')">Kup teraz</button>
-
-<script>
-  function zamowienie(produkt) {
-    const dane = prompt("Podaj swój  adres dostawy i numer telefonu:");
-    if (dane) {
-      alert("Dziękujemy za zamówienie " + produkt + "! Skontaktujemy się z Tobą jesli coś poszlo nie tak wyslij wiadomość na "kamilwas112@wp.pl".");
-      // Tu można w przyszłości dodać wysyłkę danych do maila lub serwera
-    }
-  }
-</script>
-      <p class="price">50 PLN</p>
-    </div>
-    <div class="product">
-      <img src="https://i.imgur.com/VR4Sm0I.jpg" alt="Swy Intense">
-      <h3>Swy Intensely</h3>
-      <h2>JPG Perfumy - 50 PLN</h2>
-<p>Dostawa za pobraniem (płatność przy odbiorze)</p>
-<button onclick="zamowienie('JPG Perfumy')">Kup teraz</button>
-
-<h2>SWY Intensely - 50 PLN</h2>
-<p>Dostawa za pobraniem (płatność przy odbiorze)</p>
-<button onclick="zamowienie('SWY Intensely')">Kup teraz</button>
-
-<script>
-  function zamowienie(produkt) {
-    const dane = prompt("Podaj swój adres dostawy i numer telefonu jesli coś poszło nie tak zkontaktuj sie z nami na "kamilwas112@wp.pl":");
-    if (dane) {
-      alert("Dziękujemy za zamówienie " + produkt + "! Skontaktujemy się z Tobą.");
-      // Tu można w przyszłości dodać wysyłkę danych do maila lub serwera
-    }
-  }
-</script>
-      <p class="price">50 PLN</p>
-    </div>
-    <div class="product">
-      <img src="https://
-        
-        <h2>Koszulka Memese - 70 PLN</h2>
-<img src="koszulka.jpg" alt="Koszulka Memese" width="200">
-<p>Dostawa za pobraniem (płatność przy odbiorze)</p>
-<button onclick="zamowienie('Koszulka Memese')">Kup teraz</button>
-      <div class="product">
-  <img src="perfum1.jpg" alt="Perfum A" width="200" />
-  <h2>Perfum A</h2>
-  <p><strong>Opis:</strong> Świeży zapach z nutami cytrusów, mięty i drzewa sandałowego. Idealny na lato.</p>
-  <p><strong>Trwałość:</strong> 6-8 godzin</p>
-  <p><strong>Okazje:</strong> Codzienne użytkowanie, spotkania</p>
-</div>
-      <h2>Zamów teraz</h2>
-<form action="https://formsubmit.co/youremail@example.com" method="POST">
-  <label>Imię i nazwisko:</label><br>
-  <input type="text" name="name" required><br>
-
-  <label>Adres email:</label><br>
-  <input type="email" name="email" required><br>
-
-  <label>Adres dostawy:</label><br>
-  <textarea name="address" required></textarea><br>
-
-  <label>Produkt:</label><br>
-  <select name="product">
-    <option value="Perfum A">Perfum A</option>
-    <option value="Perfum B">Perfum B</option>
-  </select><br>
-
-  <label>Metoda płatności:</label><br>
-  <input type="radio" name="payment" value="Za pobraniem" checked> Za pobraniem<br>
-  <input type="radio" name="payment" value="BLIK"> BLIK<br>
-  <input type="radio" name="payment" value="Przelew"> Przelew<br><br>
-
-  <button type="submit">Zamów</button>
-</form>
-      <h3>Metody płatności:</h3>
-<ul>
-  <li>💵 Za pobraniem</li>
-  <li>📱 BLIK (poprosimy Cię o kod po zamówieniu)</li>
-  <li>🏦 Przelew bankowy (dane wysyłamy na e-mail)</li>
-</ul>
-      <!DOCTYPE html>
-<html lang="pl">
-<head>
-  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Koszulka Memese</title>
+  <title>Memese Store</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Montserrat', sans-serif;
+    }
+
     body {
       background-color: #111;
       color: white;
-      font-family: Arial, sans-serif;
+    }
+
+    header {
+      background-color: #000;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: 700;
+      color: red;
+      font-style: italic;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    .hero {
+      background: url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
+      height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 48px;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding: 20px;
+      border-radius: 8px;
+    }
+
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+    }
+
+    .product {
+      background-color: #222;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+
+    .product img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+
+    .product h3 {
+      margin-top: 15px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+
+    .product p {
+      color: #aaa;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+
+    .product button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: red;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #000;
       text-align: center;
       padding: 20px;
-    }
-
-    .shirt-preview {
-      margin-top: 30px;
-    }
-
-    .memese-logo {
-      font-size: 48px;
-      font-style: italic;
-      color: red;
-      margin-top: 20px;
-    }
-
-    .shirt-img {
-      width: 300px;
-      max-width: 90%;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(255, 0, 0, 0.3);
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <h1>Koszulka Memese</h1>
-  <p>Stylowa czarna koszulka z czerwonym napisem <strong>"memese"</strong>.</p>
+  <header>
+    <div class="logo">memese</div>
+    <nav>
+      <a href="#">Nowości</a>
+      <a href="#">Koszulki</a>
+      <a href="#">Kontakt</a>
+    </nav>
+  </header>
 
-  <div class="shirt-preview">
-    <img src="A_digital_photograph_displays_a_black_short-sleeve.png" alt="Koszulka Memese" class="shirt-img" />
-    <div class="memese-logo">memese</div>
-  </div>
+  <section class="hero">
+    <h1>Ubierz się jak mem. Bądź memese.</h1>
+  </section>
+
+  <section class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1602810318297-9bdfcd6fbdad?auto=format&fit=crop&w=800&q=80" alt="koszulka memese" />
+      <h3>Koszulka Memese Classic</h3>
+      <p>Stylowa czarna koszulka z czerwonym logo.</p>
+      <button>Kup teraz</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1618354691373-cc56ae9f689c?auto=format&fit=crop&w=800&q=80" alt="koszulka" />
+      <h3>Koszulka Memese Fire</h3>
+      <p>Czerwony ogień na czarnym tle – edycja limitowana.</p>
+      <button>Kup teraz</button>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 Memese. Wszystkie prawa zastrzeżone.
+  </footer>
 </body>
 </html>
+
 
       
 
