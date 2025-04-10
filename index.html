@@ -24,6 +24,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      flex-wrap: wrap;
     }
 
     .logo {
@@ -42,7 +43,7 @@
 
     .hero {
       background: url('https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1600&q=80') no-repeat center center/cover;
-      height: 80vh;
+      height: 70vh;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -57,11 +58,21 @@
       border-radius: 8px;
     }
 
+    section {
+      padding: 40px;
+    }
+
+    .category-title {
+      font-size: 32px;
+      margin-bottom: 20px;
+      border-bottom: 2px solid red;
+      padding-bottom: 10px;
+    }
+
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
-      padding: 40px;
     }
 
     .product {
@@ -90,7 +101,8 @@
       font-size: 14px;
     }
 
-    .product button {
+    .product button,
+    .product form button {
       margin-top: 10px;
       padding: 10px 20px;
       background-color: red;
@@ -114,9 +126,12 @@
   <header>
     <div class="logo">memese</div>
     <nav>
-      <a href="#">Nowości</a>
-      <a href="#">Koszulki</a>
-      <a href="#">Kontakt</a>
+      <a href="#koszulki">Koszulki</a>
+      <a href="#bluzy">Bluzy</a>
+      <a href="#buty">Buty</a>
+      <a href="#akcesoria">Akcesoria</a>
+      <a href="#tech">Technologia</a>
+      <a href="#kontakt">Kontakt</a>
     </nav>
   </header>
 
@@ -124,19 +139,82 @@
     <h1>Ubierz się jak mem. Bądź memese.</h1>
   </section>
 
-  <section class="products">
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1602810318297-9bdfcd6fbdad?auto=format&fit=crop&w=800&q=80" alt="koszulka memese" />
-      <h3>Koszulka Memese Classic</h3>
-      <p>Stylowa czarna koszulka z czerwonym logo.</p>
-      <button>Kup teraz</button>
+  <section id="koszulki">
+    <h2 class="category-title">Koszulki</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1602810318297-9bdfcd6fbdad?auto=format&fit=crop&w=800&q=80" alt="Koszulka Memese Classic" />
+        <h3><h3><a href="produkt-koszulka.html" style="color: white; text-decoration: none;">Koszulka Memese Classic</a></h3>
+</h3>
+        <p>Stylowa czarna koszulka z czerwonym logo.</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
+          <input type="hidden" name="cmd" value="_xclick">
+          <input type="hidden" name="business" value="twoj-email@paypal.com">
+          <input type="hidden" name="item_name" value="Koszulka Memese Classic">
+          <input type="hidden" name="amount" value="69.00">
+          <input type="hidden" name="currency_code" value="PLN">
+          <button type="submit">Kup teraz przez PayPal</button>
+        </form>
+      </div>
     </div>
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1618354691373-cc56ae9f689c?auto=format&fit=crop&w=800&q=80" alt="koszulka" />
-      <h3>Koszulka Memese Fire</h3>
-      <p>Czerwony ogień na czarnym tle – edycja limitowana.</p>
-      <button>Kup teraz</button>
+  </section>
+
+  <section id="bluzy">
+    <h2 class="category-title">Bluzy</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1598970434795-0c54fe7c0642?auto=format&fit=crop&w=800&q=80" alt="Bluza Memese" />
+        <h3>Bluza Memese Oversize</h3>
+        <p>Luźna czarna bluza z wyhaftowanym logiem Memese.</p>
+        <button>Kup teraz</button>
+      </div>
     </div>
+  </section>
+
+  <section id="buty">
+    <h2 class="category-title">Buty</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1585386959984-a4155222f7c8?auto=format&fit=crop&w=800&q=80" alt="Buty Memese RedKick" />
+        <h3>Buty Memese RedKick</h3>
+        <p>Unikalne sneakersy z czerwonym akcentem.</p>
+        <button>Kup teraz</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="akcesoria">
+    <h2 class="category-title">Akcesoria</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1579208575657-c595a05383b7?auto=format&fit=crop&w=800&q=80" alt="Łańcuszek Memese Ice" />
+        <h3>Łańcuszek Memese Ice</h3>
+        <p>Błyszczący łańcuszek dla prawdziwych bossów.</p>
+        <button>Kup teraz</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech">
+    <h2 class="category-title">Technologia</h2>
+    <div class="products">
+      <div class="product">
+        <img src="https://images.unsplash.com/photo-1587202372775-a7073e6f2c09?auto=format&fit=crop&w=800&q=80" alt="Laptop Memese" />
+        <h3>Laptop Memese Pro</h3>
+        <p>Szybki jak Ty. Komputer do montażu memów i gier.</p>
+        <button>Kup teraz</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="kontakt" style="padding: 40px; text-align: center;">
+    <h2>Skontaktuj się z nami</h2>
+    <form action="https://formspree.io/f/mwkgyvvg" method="POST" style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+      <input type="text" name="name" placeholder="Twoje imię" required style="padding: 10px;">
+      <input type="email" name="email" placeholder="Twój email" required style="padding: 10px;">
+      <textarea name="message" placeholder="Wiadomość" rows="5" required style="padding: 10px;"></textarea>
+      <button type="submit" style="padding: 10px; background-color: red; color: white; border: none; cursor: pointer;">Wyślij</button>
+    </form>
   </section>
 
   <footer>
@@ -144,7 +222,6 @@
   </footer>
 </body>
 </html>
-
 
       
 
