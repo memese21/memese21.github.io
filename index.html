@@ -2,8 +2,8 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MEMESE Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MEMESE STORE</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
@@ -12,128 +12,68 @@
       font-family: 'Montserrat', sans-serif;
       margin: 0;
     }
-
-    header {
+    header, footer {
       background-color: #000;
-      padding: 20px;
       text-align: center;
+      padding: 20px;
     }
-
     header h1 {
       color: red;
       font-style: italic;
-      font-size: 36px;
     }
-
     nav {
+      display: flex;
+      justify-content: center;
       background-color: #000;
       padding: 10px;
+      gap: 20px;
     }
-
-    .menu-toggle {
-      font-size: 28px;
-      cursor: pointer;
-      color: white;
-      padding: 10px;
-    }
-
-    .menu-links {
-      display: none;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .menu-links.active {
-      display: flex;
-    }
-
-    .menu-links a, .submenu a {
+    nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
-
-    .menu-links input[type="text"] {
-      width: 90%;
-      padding: 8px;
-      border: none;
-      border-radius: 5px;
-      margin-bottom: 10px;
-    }
-
-    .submenu-toggle {
-      color: red;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .submenu {
-      display: none;
-      flex-direction: column;
-      margin-left: 20px;
-      gap: 5px;
-    }
-
-    .submenu.active {
-      display: flex;
-    }
-
     section {
       padding: 40px 20px;
       max-width: 1200px;
       margin: auto;
     }
-
     section h2 {
       color: red;
-      font-size: 28px;
-      margin-bottom: 20px;
       font-style: italic;
       border-bottom: 1px solid red;
       padding-bottom: 10px;
     }
-
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
-
     .product {
       background-color: #222;
       border-radius: 10px;
       padding: 20px;
       text-align: center;
     }
-
     .product img {
       width: 100%;
       border-radius: 10px;
-      height: auto;
     }
-
     .product h3 {
       color: red;
-      margin-top: 15px;
     }
-
     .product p {
       color: #ccc;
-      font-size: 14px;
     }
-
     .product button {
       background-color: red;
       color: white;
       border: none;
       padding: 10px 20px;
       border-radius: 5px;
-      font-weight: bold;
       cursor: pointer;
-      margin-top: 10px;
     }
-
-    .music-button {
+    .music-button, .cart-button {
       background-color: red;
       color: white;
       border: none;
@@ -144,144 +84,138 @@
       display: block;
       cursor: pointer;
     }
-
-    footer {
-      background-color: #000;
-      color: #777;
-      text-align: center;
-      padding: 20px;
+    form label {
+      display: block;
+      margin-top: 10px;
     }
-
-    .light-theme {
-      background-color: #fff;
-      color: #000;
+    form input, form textarea {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      margin-top: 5px;
+    }
+    form button {
+      margin-top: 15px;
+      background-color: red;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>MEMESE STORE</h1>
-  </header>
 
-  <button class="music-button" onclick="playMusic()">🎵 Włącz muzykę</button>
-  <audio id="music" loop>
-    <source src="https://files.catbox.moe/y9yrrb.mp3" type="audio/mpeg">
-    Twoja przeglądarka nie obsługuje odtwarzania muzyki.
-  </audio>
+<header>
+  <h1>MEMESE STORE</h1>
+</header>
 
-  <nav>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <div class="menu-links" id="menu">
-      <input type="text" id="searchInput" placeholder="Szukaj produktu..." onkeyup="searchProducts()" />
+<button class="music-button" onclick="playMusic()">🎵 Włącz muzykę</button>
+<audio id="music" loop>
+  <source src="https://files.catbox.moe/y9yrrb.mp3" type="audio/mpeg">
+</audio>
 
-      <a href="#koszulki">Koszulki</a>
-      <a href="#buty">Buty</a>
-      <a href="#spodnie">Spodnie</a>
-      <a href="#czapki">Czapki</a>
-      <a href="#bluzy">Bluzy</a>
-      <a href="#kontakt">Kontakt</a>
+<nav>
+  <a href="#produkty">Produkty</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="#ankieta">Ankieta</a>
+</nav>
 
-      <div class="submenu-toggle" onclick="toggleSub('profileMenu')">👤 Profil ▼</div>
-      <div class="submenu" id="profileMenu">
-        <a href="#">Edytuj profil</a>
-        <a href="#">Awatar</a>
-        <a href="#">Portfel: 0 zł</a>
-      </div>
-
-      <div class="submenu-toggle" onclick="toggleSub('settingsMenu')">⚙️ Ustawienia ▼</div>
-      <div class="submenu" id="settingsMenu">
-        <a href="#" onclick="toggleTheme()">Motyw: <span id="themeLabel">Ciemny</span></a>
-        <a href="#">Bezpieczeństwo</a>
-      </div>
+<section id="produkty">
+  <h2>Produkty</h2>
+  <div class="products">
+    <div class="product">
+      <img src="img/tshirt1.png" alt="Koszulka MEMESE">
+      <h3>Koszulka MEMESE</h3>
+      <p>Cena: 99 zł</p>
+      <button onclick="dodajDoKoszyka('Koszulka MEMESE', 99)">Dodaj do koszyka</button>
     </div>
-  </nav>
-
-  <section id="koszulki">
-    <h2>Koszulki</h2>
-    <div class="products">
-      <!-- dodaj koszulki tutaj -->
+    <div class="product">
+      <img src="img/spodnie1.png" alt="Spodnie MEMESE">
+      <h3>Spodnie MEMESE</h3>
+      <p>Cena: 139 zł</p>
+      <button onclick="dodajDoKoszyka('Spodnie MEMESE', 139)">Dodaj do koszyka</button>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="buty">
-    <h2>Buty</h2>
-    <div class="products">
-      <!-- dodaj buty tutaj -->
-    </div>
-  </section>
+<section id="koszyk">
+  <h2>Koszyk</h2>
+  <div id="koszyk-zawartosc"></div>
+  <button class="cart-button" onclick="zlozZamowienie()">Kup teraz (BLIK / Przy odbiorze)</button>
+</section>
 
-  <section id="spodnie">
-    <h2>Spodnie</h2>
-    <div class="products">
-      <!-- dodaj spodnie tutaj -->
-    </div>
-  </section>
+<section id="kontakt">
+  <h2>Kontakt</h2>
+  <form action="https://formspree.io/f/xdkeyqyg" method="POST">
+    <label>Email:
+      <input type="email" name="email" required />
+    </label>
+    <label>Wiadomość:
+      <textarea name="message" rows="4" required></textarea>
+    </label>
+    <button type="submit">Wyślij</button>
+  </form>
+</section>
 
-  <section id="czapki">
-    <h2>Czapki</h2>
-    <div class="products">
-      <!-- dodaj czapki tutaj -->
-    </div>
-  </section>
+<section id="ankieta">
+  <h2>Ankieta</h2>
+  <form>
+    <label>Jak oceniasz sklep?
+      <select>
+        <option>5 - Super!</option>
+        <option>4 - Dobrze</option>
+        <option>3 - Może być</option>
+        <option>2 - Średnio</option>
+        <option>1 - Słabo</option>
+      </select>
+    </label>
+    <label>Twoje uwagi:
+      <textarea rows="3"></textarea>
+    </label>
+    <button type="submit">Wyślij opinię</button>
+  </form>
+</section>
 
-  <section id="bluzy">
-    <h2>Bluzy</h2>
-    <div class="products">
-      <!-- dodaj bluzy tutaj -->
-    </div>
-  </section>
+<footer>
+  &copy; 2025 MEMESE STORE. Wszystkie prawa zastrzeżone.
+</footer>
 
-  <section id="kontakt">
-    <h2>Kontakt i zamówienia</h2>
-    <form action="https://formspree.io/f/xdkeyqyg" method="POST" class="order-form">
-      <label>
-        Email:
-        <input type="email" name="email" required />
-      </label><br><br>
-      <label>
-        Wiadomość:
-        <textarea name="message" rows="4" required></textarea>
-      </label><br><br>
-      <button type="submit">Wyślij</button>
-    </form>
-  </section>
+<script>
+  function playMusic() {
+    document.getElementById('music').play();
+  }
 
-  <footer>
-    &copy; 2025 MEMESE STORE. Wszystkie prawa zastrzeżone.
-  </footer>
+  const koszyk = [];
 
-  <script>
-    function toggleMenu() {
-      document.getElementById('menu').classList.toggle('active');
-    }
+  function dodajDoKoszyka(nazwa, cena) {
+    koszyk.push({ nazwa, cena });
+    pokazKoszyk();
+  }
 
-    function toggleSub(id) {
-      document.getElementById(id).classList.toggle('active');
-    }
+  function pokazKoszyk() {
+    const zawartosc = document.getElementById('koszyk-zawartosc');
+    zawartosc.innerHTML = '';
+    let suma = 0;
+    koszyk.forEach((item, i) => {
+      suma += item.cena;
+      zawartosc.innerHTML += `<p>${i + 1}. ${item.nazwa} - ${item.cena} zł</p>`;
+    });
+    zawartosc.innerHTML += `<p><strong>Suma: ${suma} zł</strong></p>`;
+  }
 
-    function toggleTheme() {
-      const body = document.body;
-      const label = document.getElementById('themeLabel');
-      body.classList.toggle('light-theme');
-      label.textContent = body.classList.contains('light-theme') ? 'Jasny' : 'Ciemny';
-    }
+  function zlozZamowienie() {
+    alert("Zamówienie złożone! Wybierz płatność BLIK lub zapłać przy odbiorze.");
+    koszyk.length = 0;
+    pokazKoszyk();
+  }
+</script>
 
-    function searchProducts() {
-      const input = document.getElementById('searchInput').value.toLowerCase();
-      const products = document.querySelectorAll('.product');
-
-      products.forEach(product => {
-        const text = product.innerText.toLowerCase();
-        product.style.display = text.includes(input) ? 'block' : 'none';
-      });
-    }
-
-    function playMusic() {
-      document.getElementById('music').play();
-    }
-  </script>
 </body>
 </html>
+
 
 
 
