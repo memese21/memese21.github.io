@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>MEMESE Store</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -94,31 +94,28 @@
     }
 
     form {
-      max-width: 500px;
-      margin: 40px auto;
-      background: #222;
+      margin-top: 50px;
+      background-color: #222;
       padding: 20px;
       border-radius: 10px;
     }
 
-    form label {
-      display: block;
-      margin-bottom: 10px;
-    }
-
-    form input,
-    form textarea,
-    form select {
+    form input, form textarea, form select {
       width: 100%;
       padding: 10px;
-      margin-top: 5px;
+      margin: 10px 0;
       border: none;
       border-radius: 5px;
     }
 
     form button {
-      margin-top: 15px;
-      width: 100%;
+      background-color: red;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
     }
 
     footer {
@@ -126,90 +123,55 @@
       color: #777;
       text-align: center;
       padding: 20px;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 28px;
-      }
+      margin-top: 40px;
     }
   </style>
 </head>
-
 <body>
 
-  <!-- 🎶 Muzyka -->
-  <iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ladygaga7/lady-gaga-abracadabra-sped-up&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
-  </iframe>
-
-  <!-- 🛍️ Nagłówek -->
   <header>
-    <h1>MEMESE Store</h1>
+    <h1>MEMESE STORE</h1>
   </header>
 
   <nav>
-    <a href="#produkty">Koszulki</a>
-    <a href="#zamow">Zamów</a>
+    <a href="https://www.etsy.com">Kup na Etsy</a>
+    <a href="#zamow">Zamów przez formularz</a>
   </nav>
 
-  <!-- 👕 Produkty -->
-  <section id="produkty">
+  <section>
     <h2>Nasze Koszulki</h2>
     <div class="products">
       <div class="product">
-        <img src="https://via.placeholder.com/300x300.png?text=Koszulka+1" alt="Koszulka 1">
-        <h3>Meme Classic</h3>
-        <p>Basic koszulka z klasycznym wzorem MEME.</p>
-        <a href="https://www.etsy.com/pl/listing/123456789/memowa-koszulka" target="_blank">
-          <button>Kup na Etsy</button>
-        </a>
+        <img src="img/unisex-garment-dyed-heavyweight-t-shirt-black-front-65dbe550e25f9.png" alt="Koszulka 1">
+        <h3>Koszulka MEME #1</h3>
+        <p>Czarna koszulka z memem. Rozmiary: S, M, L, XL</p>
+        <button>Kup teraz</button>
       </div>
-
       <div class="product">
-        <img src="https://via.placeholder.com/300x300.png?text=Koszulka+2" alt="Koszulka 2">
-        <h3>Dark Edition</h3>
-        <p>Limitowana edycja z czarno-czerwonym printem.</p>
-        <button onclick="document.getElementById('zamow').scrollIntoView()">Zamów bezpośrednio</button>
+        <img src="img/unisex-garment-dyed-heavyweight-t-shirt-white-front-65dbe51ef3c44.png" alt="Koszulka 2">
+        <h3>Koszulka MEME #2</h3>
+        <p>Biała koszulka z napisem. Rozmiary: S, M, L, XL</p>
+        <button>Kup teraz</button>
       </div>
     </div>
-  </section>
 
-  <!-- 📬 Formularz -->
-  <section id="zamow">
-    <h2>Zamów bezpośrednio</h2>
-    <form action="https://formspree.io/f/xdkeyqyg" method="POST">
-      <label>
-        Imię i nazwisko:
-        <input type="text" name="name" required />
-      </label>
-      <label>
-        Adres do wysyłki:
-        <input type="text" name="address" required />
-      </label>
-      <label>
-        Telefon kontaktowy:
-        <input type="text" name="phone" required />
-      </label>
-      <label>
-        Metoda płatności:
-        <select name="payment" required>
-          <option value="">Wybierz</option>
-          <option value="blik">BLIK</option>
-          <option value="pobranie">Za pobraniem</option>
-        </select>
-      </label>
-      <label>
-        Uwagi (rozmiar, kolor, wzór):
-        <textarea name="message" rows="4"></textarea>
-      </label>
+    <form id="zamow" action="https://formspree.io/f/xdkeyqyg" method="POST">
+      <h2>Zamów bezpośrednio</h2>
+      <input type="text" name="name" placeholder="Imię i nazwisko" required />
+      <input type="text" name="address" placeholder="Adres do wysyłki" required />
+      <input type="text" name="phone" placeholder="Numer telefonu" required />
+      <select name="payment" required>
+        <option value="">Wybierz metodę płatności</option>
+        <option value="blik">BLIK</option>
+        <option value="pobranie">Za pobraniem</option>
+      </select>
+      <textarea name="message" placeholder="Uwagi (np. rozmiar, wzór)" rows="4"></textarea>
       <button type="submit">Zamawiam</button>
     </form>
   </section>
 
-  <!-- 📎 Stopka -->
   <footer>
-    &copy; 2025 MEMESE Store. Wszelkie prawa zastrzeżone.
+    &copy; 2025 MEMESE. Wszystkie prawa zastrzeżone.
   </footer>
 
 </body>
