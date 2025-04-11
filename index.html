@@ -12,16 +12,19 @@
       font-family: 'Montserrat', sans-serif;
       margin: 0;
     }
+
     header {
       background-color: #000;
       padding: 20px;
       text-align: center;
     }
+
     header h1 {
       color: red;
       font-style: italic;
       font-size: 36px;
     }
+
     nav {
       display: flex;
       justify-content: center;
@@ -29,16 +32,19 @@
       padding: 10px 0;
       gap: 20px;
     }
+
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
+
     section {
       padding: 40px 20px;
       max-width: 1200px;
       margin: auto;
     }
+
     section h2 {
       color: red;
       font-size: 28px;
@@ -47,29 +53,35 @@
       border-bottom: 1px solid red;
       padding-bottom: 10px;
     }
+
     .products {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 30px;
     }
+
     .product {
       background-color: #222;
       border-radius: 10px;
       padding: 20px;
       text-align: center;
     }
+
     .product img {
       width: 100%;
       border-radius: 10px;
     }
+
     .product h3 {
       color: red;
       margin-top: 15px;
     }
+
     .product p {
       color: #ccc;
       font-size: 14px;
     }
+
     .product button {
       background-color: red;
       color: white;
@@ -80,12 +92,7 @@
       cursor: pointer;
       margin-top: 10px;
     }
-    footer {
-      background-color: #000;
-      color: #777;
-      text-align: center;
-      padding: 20px;
-    }
+
     form {
       max-width: 500px;
       margin: 40px auto;
@@ -93,20 +100,38 @@
       padding: 20px;
       border-radius: 10px;
     }
+
     form label {
       display: block;
       margin-bottom: 10px;
     }
-    form input, form textarea {
+
+    form input,
+    form textarea,
+    form select {
       width: 100%;
       padding: 10px;
       margin-top: 5px;
       border: none;
       border-radius: 5px;
     }
+
     form button {
       margin-top: 15px;
       width: 100%;
+    }
+
+    footer {
+      background-color: #000;
+      color: #777;
+      text-align: center;
+      padding: 20px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 28px;
+      }
     }
   </style>
 </head>
@@ -114,7 +139,7 @@
 <body>
 
   <!-- 🎶 Muzyka -->
-  <iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay" 
+  <iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay"
     src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ladygaga7/lady-gaga-abracadabra-sped-up&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
   </iframe>
 
@@ -128,17 +153,24 @@
     <a href="#zamow">Zamów</a>
   </nav>
 
-  <!-- 🧢 Produkty -->
+  <!-- 👕 Produkty -->
   <section id="produkty">
     <h2>Nasze Koszulki</h2>
     <div class="products">
       <div class="product">
-        <img src="https://via.placeholder.com/300x300.png?text=Koszulka+MEME" alt="Koszulka MEME">
-        <h3>Koszulka MEME #1</h3>
-        <p>Najlepszy wzór na lato 2025!</p>
+        <img src="https://via.placeholder.com/300x300.png?text=Koszulka+1" alt="Koszulka 1">
+        <h3>Meme Classic</h3>
+        <p>Basic koszulka z klasycznym wzorem MEME.</p>
         <a href="https://www.etsy.com/pl/listing/123456789/memowa-koszulka" target="_blank">
           <button>Kup na Etsy</button>
         </a>
+      </div>
+
+      <div class="product">
+        <img src="https://via.placeholder.com/300x300.png?text=Koszulka+2" alt="Koszulka 2">
+        <h3>Dark Edition</h3>
+        <p>Limitowana edycja z czarno-czerwonym printem.</p>
+        <button onclick="document.getElementById('zamow').scrollIntoView()">Zamów bezpośrednio</button>
       </div>
     </div>
   </section>
@@ -148,22 +180,37 @@
     <h2>Zamów bezpośrednio</h2>
     <form action="https://formspree.io/f/xdkeyqyg" method="POST">
       <label>
-        Twój email:
-        <input type="email" name="email" required>
+        Imię i nazwisko:
+        <input type="text" name="name" required />
       </label>
       <label>
-        Wiadomość:
-        <textarea name="message" rows="4" required></textarea>
+        Adres do wysyłki:
+        <input type="text" name="address" required />
       </label>
-      <button type="submit">Wyślij</button>
+      <label>
+        Telefon kontaktowy:
+        <input type="text" name="phone" required />
+      </label>
+      <label>
+        Metoda płatności:
+        <select name="payment" required>
+          <option value="">Wybierz</option>
+          <option value="blik">BLIK</option>
+          <option value="pobranie">Za pobraniem</option>
+        </select>
+      </label>
+      <label>
+        Uwagi (rozmiar, kolor, wzór):
+        <textarea name="message" rows="4"></textarea>
+      </label>
+      <button type="submit">Zamawiam</button>
     </form>
   </section>
 
-  <!-- 🧾 Stopka -->
+  <!-- 📎 Stopka -->
   <footer>
-    &copy; 2025 MEMESE Store. All rights reserved.
+    &copy; 2025 MEMESE Store. Wszelkie prawa zastrzeżone.
   </footer>
 
 </body>
 </html>
-
