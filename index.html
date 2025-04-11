@@ -94,6 +94,18 @@
       margin-top: 10px;
     }
 
+    .music-button {
+      background-color: red;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      margin: 20px auto;
+      display: block;
+      cursor: pointer;
+    }
+
     footer {
       background-color: #000;
       color: #777;
@@ -108,14 +120,15 @@
 </head>
 <body>
 
-  <!-- Muzyka MEMESE -->
-  <iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay"
-    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ladygaga7/lady-gaga-abracadabra-sped-up&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
-  </iframe>
-
   <header>
     <h1>MEMESE STORE</h1>
   </header>
+
+  <button class="music-button" onclick="playMusic()">🎵 Włącz muzykę</button>
+  <audio id="music" loop>
+    <source src="https://files.catbox.moe/y9yrrb.mp3" type="audio/mpeg">
+    Twoja przeglądarka nie obsługuje odtwarzania muzyki.
+  </audio>
 
   <nav>
     <a href="#bluzy">Bluzy</a>
@@ -142,14 +155,6 @@
           <button>Kup teraz</button>
         </a>
       </div>
-      <div class="product">
-        <img src="img/bluza3.jpg" alt="Bluza MEMESE 3">
-        <h3>Bluza MEMESE #3</h3>
-        <p>Cena: 129 zł</p>
-        <a href="https://www.etsy.com/listing/bluza3" target="_blank">
-          <button>Kup teraz</button>
-        </a>
-      </div>
     </div>
   </section>
 
@@ -169,14 +174,6 @@
         <h3>Czapka MEMESE #2</h3>
         <p>Cena: 79 zł</p>
         <a href="https://www.etsy.com/listing/czapka2" target="_blank">
-          <button>Kup teraz</button>
-        </a>
-      </div>
-      <div class="product">
-        <img src="img/czapka3.jpg" alt="Czapka MEMESE 3">
-        <h3>Czapka MEMESE #3</h3>
-        <p>Cena: 79 zł</p>
-        <a href="https://www.etsy.com/listing/czapka3" target="_blank">
           <button>Kup teraz</button>
         </a>
       </div>
@@ -201,6 +198,12 @@
   <footer>
     &copy; 2025 MEMESE STORE. Wszystkie prawa zastrzeżone.
   </footer>
+
+  <script>
+    function playMusic() {
+      document.getElementById('music').play();
+    }
+  </script>
 </body>
 </html>
 
