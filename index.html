@@ -56,7 +56,7 @@
 
     .products {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 30px;
     }
 
@@ -70,6 +70,7 @@
     .product img {
       width: 100%;
       border-radius: 10px;
+      height: auto;
     }
 
     .product h3 {
@@ -93,92 +94,113 @@
       margin-top: 10px;
     }
 
-    form {
-      margin-top: 50px;
-      background-color: #222;
-      padding: 20px;
-      border-radius: 10px;
-    }
-
-    form input, form textarea, form select {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-    }
-
-    form button {
-      background-color: red;
-      color: white;
-      padding: 10px 20px;
-      border: none;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
     footer {
       background-color: #000;
       color: #777;
       text-align: center;
       padding: 20px;
-      margin-top: 40px;
+    }
+
+    iframe {
+      display: none;
     }
   </style>
 </head>
 <body>
 
-<!-- 🎵 Muzyka MEMESE – Lady Gaga Remix -->
-<iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay" 
-src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ladygaga7/lady-gaga-abracadabra-sped-up&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
-</iframe>
+  <!-- Muzyka MEMESE -->
+  <iframe width="0" height="0" scrolling="no" frameborder="no" allow="autoplay"
+    src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/ladygaga7/lady-gaga-abracadabra-sped-up&color=%23ff5500&auto_play=true&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false">
+  </iframe>
 
-<header>
-  <h1>MEMESE STORE</h1>
-</header>
+  <header>
+    <h1>MEMESE STORE</h1>
+  </header>
 
-<nav>
-  <a href="https://www.etsy.com">Kup na Etsy</a>
-  <a href="#zamow">Zamów przez formularz</a>
-</nav>
+  <nav>
+    <a href="#bluzy">Bluzy</a>
+    <a href="#czapki">Czapki</a>
+    <a href="#kontakt">Kontakt</a>
+  </nav>
 
-<section>
-  <h2>Nasze Koszulki</h2>
-  <div class="products">
-    <div class="product">
-      <img src="img/unisex-garment-dyed-heavyweight-t-shirt-black-front-65dbe550e25f9.png" alt="Koszulka 1">
-      <h3>Koszulka MEME #1</h3>
-      <p>Czarna koszulka z memem. Rozmiary: S, M, L, XL</p>
-      <button>Kup teraz</button>
+  <section id="bluzy">
+    <h2>Bluzy</h2>
+    <div class="products">
+      <div class="product">
+        <img src="img/bluza1.jpg" alt="Bluza MEMESE 1">
+        <h3>Bluza MEMESE #1</h3>
+        <p>Cena: 129 zł</p>
+        <a href="https://www.etsy.com/listing/bluza1" target="_blank">
+          <button>Kup teraz</button>
+        </a>
+      </div>
+      <div class="product">
+        <img src="img/bluza2.jpg" alt="Bluza MEMESE 2">
+        <h3>Bluza MEMESE #2</h3>
+        <p>Cena: 129 zł</p>
+        <a href="https://www.etsy.com/listing/bluza2" target="_blank">
+          <button>Kup teraz</button>
+        </a>
+      </div>
+      <div class="product">
+        <img src="img/bluza3.jpg" alt="Bluza MEMESE 3">
+        <h3>Bluza MEMESE #3</h3>
+        <p>Cena: 129 zł</p>
+        <a href="https://www.etsy.com/listing/bluza3" target="_blank">
+          <button>Kup teraz</button>
+        </a>
+      </div>
     </div>
-    <div class="product">
-      <img src="img/unisex-garment-dyed-heavyweight-t-shirt-white-front-65dbe51ef3c44.png" alt="Koszulka 2">
-      <h3>Koszulka MEME #2</h3>
-      <p>Biała koszulka z napisem. Rozmiary: S, M, L, XL</p>
-      <button>Kup teraz</button>
+  </section>
+
+  <section id="czapki">
+    <h2>Czapki</h2>
+    <div class="products">
+      <div class="product">
+        <img src="img/czapka1.jpg" alt="Czapka MEMESE 1">
+        <h3>Czapka MEMESE #1</h3>
+        <p>Cena: 79 zł</p>
+        <a href="https://www.etsy.com/listing/czapka1" target="_blank">
+          <button>Kup teraz</button>
+        </a>
+      </div>
+      <div class="product">
+        <img src="img/czapka2.jpg" alt="Czapka MEMESE 2">
+        <h3>Czapka MEMESE #2</h3>
+        <p>Cena: 79 zł</p>
+        <a href="https://www.etsy.com/listing/czapka2" target="_blank">
+          <button>Kup teraz</button>
+        </a>
+      </div>
+      <div class="product">
+        <img src="img/czapka3.jpg" alt="Czapka MEMESE 3">
+        <h3>Czapka MEMESE #3</h3>
+        <p>Cena: 79 zł</p>
+        <a href="https://www.etsy.com/listing/czapka3" target="_blank">
+          <button>Kup teraz</button>
+        </a>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <form id="zamow" action="https://formspree.io/f/xdkeyqyg" method="POST">
-    <h2>Zamów bezpośrednio</h2>
-    <input type="text" name="name" placeholder="Imię i nazwisko" required />
-    <input type="text" name="address" placeholder="Adres do wysyłki" required />
-    <input type="text" name="phone" placeholder="Numer telefonu" required />
-    <select name="payment" required>
-      <option value="">Wybierz metodę płatności</option>
-      <option value="blik">BLIK</option>
-      <option value="pobranie">Za pobraniem</option>
-    </select>
-    <textarea name="message" placeholder="Uwagi (np. rozmiar, wzór)" rows="4"></textarea>
-    <button type="submit">Zamawiam</button>
-  </form>
-</section>
+  <section id="kontakt">
+    <h2>Kontakt i zamówienia</h2>
+    <form action="https://formspree.io/f/xdkeyqyg" method="POST" class="order-form">
+      <label>
+        Email:
+        <input type="email" name="email" required />
+      </label><br><br>
+      <label>
+        Wiadomość:
+        <textarea name="message" rows="4" required></textarea>
+      </label><br><br>
+      <button type="submit">Wyślij</button>
+    </form>
+  </section>
 
-<footer>
-  &copy; 2025 MEMESE. Wszystkie prawa zastrzeżone.
-</footer>
-
+  <footer>
+    &copy; 2025 MEMESE STORE. Wszystkie prawa zastrzeżone.
+  </footer>
 </body>
 </html>
 
