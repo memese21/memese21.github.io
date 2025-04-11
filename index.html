@@ -31,6 +31,7 @@
       background-color: #000;
       padding: 10px 0;
       gap: 20px;
+      flex-wrap: wrap;
     }
 
     nav a {
@@ -113,6 +114,19 @@
       padding: 20px;
     }
 
+    form label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: none;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
     iframe {
       display: none;
     }
@@ -133,6 +147,7 @@
   <nav>
     <a href="#bluzy">Bluzy</a>
     <a href="#czapki">Czapki</a>
+    <a href="#koszulki">Koszulki</a>
     <a href="#kontakt">Kontakt</a>
   </nav>
 
@@ -180,17 +195,69 @@
     </div>
   </section>
 
+  <section id="koszulki">
+    <h2>Koszulki</h2>
+    <div class="products">
+      <div class="product">
+        <img src="img/unisex-garment-dyed-heavyweight-t-shirt-black-back-67f928ac4cb7b.png" alt="Koszulka MEMESE 1">
+        <h3>Koszulka MEMESE #1</h3>
+        <p>Cena: 89 zł</p>
+        <a href="https://www.etsy.com/listing/koszulka1" target="_blank">
+          <button>Kup teraz</button>
+        </a>
+      </div>
+      <div class="product">
+        <img src="img/unisex-garment-dyed-heavyweight-t-shirt-black-back-67f928ac4cf0f.png" alt="Koszulka MEMESE 2">
+        <h3>Koszulka MEMESE #2</h3>
+        <p>Cena: 89 zł</p>
+        <a href="https://www.etsy.com/listing/koszulka2" target="_blank">
+          <button>Kup teraz</button>
+        </a>
+      </div>
+      <div class="product">
+        <img src="img/unisex-garment-dyed-heavyweight-t-shirt-black-back-67f928ac4d2a1.png" alt="Koszulka MEMESE 3">
+        <h3>Koszulka MEMESE #3</h3>
+        <p>Cena: 89 zł</p>
+        <a href="https://www.etsy.com/listing/koszulka3" target="_blank">
+          <button>Kup teraz</button>
+        </a>
+      </div>
+      <div class="product">
+        <img src="img/unisex-garment-dyed-heavyweight-t-shirt-black-back-67f928ac4d648.png" alt="Koszulka MEMESE 4">
+        <h3>Koszulka MEMESE #4</h3>
+        <p>Cena: 89 zł</p>
+        <a href="https://www.etsy.com/listing/koszulka4" target="_blank">
+          <button>Kup teraz</button>
+        </a>
+      </div>
+      <div class="product">
+        <img src="img/unisex-garment-dyed-heavyweight-t-shirt-black-back-67f928ac4ed90.png" alt="Koszulka MEMESE 5">
+        <h3>Koszulka MEMESE #5</h3>
+        <p>Cena: 89 zł</p>
+        <a href="https://www.etsy.com/listing/koszulka5" target="_blank">
+          <button>Kup teraz</button>
+        </a>
+      </div>
+      <div class="product">
+        <img src="img/unisex-garment-dyed-heavyweight-t-shirt-black-back-67f928ac4f18d.png" alt="Koszulka MEMESE 6">
+        <h3>Koszulka MEMESE #6</h3>
+        <p>Cena: 89 zł</p>
+        <a href="https://www.etsy.com/listing/koszulka6" target="_blank">
+          <button>Kup teraz</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
   <section id="kontakt">
     <h2>Kontakt i zamówienia</h2>
-    <form action="https://formspree.io/f/xdkeyqyg" method="POST" class="order-form">
-      <label>
-        Email:
+    <form action="https://formspree.io/f/xdkeyqyg" method="POST">
+      <label>Email:
         <input type="email" name="email" required />
-      </label><br><br>
-      <label>
-        Wiadomość:
+      </label>
+      <label>Wiadomość:
         <textarea name="message" rows="4" required></textarea>
-      </label><br><br>
+      </label>
       <button type="submit">Wyślij</button>
     </form>
   </section>
@@ -206,5 +273,6 @@
   </script>
 </body>
 </html>
+
 
 
