@@ -2,7 +2,7 @@
 <html lang="pl">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MEMESE Store</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -26,17 +26,56 @@
     }
 
     nav {
-      display: flex;
-      justify-content: center;
       background-color: #000;
-      padding: 10px 0;
-      gap: 20px;
+      padding: 10px;
     }
 
-    nav a {
+    .menu-toggle {
+      font-size: 28px;
+      cursor: pointer;
+      color: white;
+      padding: 10px;
+    }
+
+    .menu-links {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .menu-links.active {
+      display: flex;
+    }
+
+    .menu-links a, .submenu a {
       color: white;
       text-decoration: none;
       font-weight: bold;
+    }
+
+    .menu-links input[type="text"] {
+      width: 90%;
+      padding: 8px;
+      border: none;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+
+    .submenu-toggle {
+      color: red;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .submenu {
+      display: none;
+      flex-direction: column;
+      margin-left: 20px;
+      gap: 5px;
+    }
+
+    .submenu.active {
+      display: flex;
     }
 
     section {
@@ -113,13 +152,13 @@
       padding: 20px;
     }
 
-    iframe {
-      display: none;
+    .light-theme {
+      background-color: #fff;
+      color: #000;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>MEMESE STORE</h1>
   </header>
@@ -131,51 +170,64 @@
   </audio>
 
   <nav>
-    <a href="#bluzy">Bluzy</a>
-    <a href="#czapki">Czapki</a>
-    <a href="#spodnie">Spodnie</a>
-    <a href="#kontakt">Kontakt</a>
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <div class="menu-links" id="menu">
+      <input type="text" id="searchInput" placeholder="Szukaj produktu..." onkeyup="searchProducts()" />
+
+      <a href="#koszulki">Koszulki</a>
+      <a href="#buty">Buty</a>
+      <a href="#spodnie">Spodnie</a>
+      <a href="#czapki">Czapki</a>
+      <a href="#bluzy">Bluzy</a>
+      <a href="#kontakt">Kontakt</a>
+
+      <div class="submenu-toggle" onclick="toggleSub('profileMenu')">👤 Profil ▼</div>
+      <div class="submenu" id="profileMenu">
+        <a href="#">Edytuj profil</a>
+        <a href="#">Awatar</a>
+        <a href="#">Portfel: 0 zł</a>
+      </div>
+
+      <div class="submenu-toggle" onclick="toggleSub('settingsMenu')">⚙️ Ustawienia ▼</div>
+      <div class="submenu" id="settingsMenu">
+        <a href="#" onclick="toggleTheme()">Motyw: <span id="themeLabel">Ciemny</span></a>
+        <a href="#">Bezpieczeństwo</a>
+      </div>
+    </div>
   </nav>
 
-  <section id="bluzy">
-    <h2>Bluzy</h2>
+  <section id="koszulki">
+    <h2>Koszulki</h2>
     <div class="products">
-      <div class="product">
-        <img src="img/unisex-crew-neck-sweatshirt-black-back-2-67f94056a889d.png" alt="Bluza MEMESE 1">
-        <h3>Bluza MEMESE #1</h3>
-        <p>Cena: 129 zł</p>
-        <a href="#" target="_blank">
-          <button>Kup teraz</button>
-        </a>
-      </div>
+      <!-- dodaj koszulki tutaj -->
     </div>
   </section>
 
-  <section id="czapki">
-    <h2>Czapki</h2>
+  <section id="buty">
+    <h2>Buty</h2>
     <div class="products">
-      <div class="product">
-        <img src="img/unisex-crew-neck-sweatshirt-black-back-2-67f94056a7aad.png" alt="Czapka MEMESE 1">
-        <h3>Czapka MEMESE #1</h3>
-        <p>Cena: 79 zł</p>
-        <a href="#" target="_blank">
-          <button>Kup teraz</button>
-        </a>
-      </div>
+      <!-- dodaj buty tutaj -->
     </div>
   </section>
 
   <section id="spodnie">
     <h2>Spodnie</h2>
     <div class="products">
-      <div class="product">
-        <img src="img/all-over-print-unisex-wide-leg-pants-white-front-67f93e433fc30.png" alt="Spodnie MEMESE 1">
-        <h3>Spodnie MEMESE #1</h3>
-        <p>Cena: 149 zł</p>
-        <a href="#" target="_blank">
-          <button>Kup teraz</button>
-        </a>
-      </div>
+      <!-- dodaj spodnie tutaj -->
+    </div>
+  </section>
+
+  <section id="czapki">
+    <h2>Czapki</h2>
+    <div class="products">
+      <!-- dodaj czapki tutaj -->
+    </div>
+  </section>
+
+  <section id="bluzy">
+    <h2>Bluzy</h2>
+    <div class="products">
+      <!-- dodaj bluzy tutaj -->
     </div>
   </section>
 
@@ -199,6 +251,31 @@
   </footer>
 
   <script>
+    function toggleMenu() {
+      document.getElementById('menu').classList.toggle('active');
+    }
+
+    function toggleSub(id) {
+      document.getElementById(id).classList.toggle('active');
+    }
+
+    function toggleTheme() {
+      const body = document.body;
+      const label = document.getElementById('themeLabel');
+      body.classList.toggle('light-theme');
+      label.textContent = body.classList.contains('light-theme') ? 'Jasny' : 'Ciemny';
+    }
+
+    function searchProducts() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const products = document.querySelectorAll('.product');
+
+      products.forEach(product => {
+        const text = product.innerText.toLowerCase();
+        product.style.display = text.includes(input) ? 'block' : 'none';
+      });
+    }
+
     function playMusic() {
       document.getElementById('music').play();
     }
