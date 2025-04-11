@@ -114,6 +114,20 @@
     <p class="product-price">59 zł</p>
     <a href="https://www.etsy.com/pl/listing/123456789/memowa-koszulka" class="buy-button" target="_blank">Kup na Etsy</a>
   </div>
+    <form action="https://formspree.io/f/YOUR-FORM-ID" method="POST" class="order-form">
+  <h2>Zamów bezpośrednio</h2>
+  <input type="text" name="name" placeholder="Imię i nazwisko" required />
+  <input type="text" name="address" placeholder="Adres do wysyłki" required />
+  <input type="text" name="phone" placeholder="Numer telefonu" required />
+  <select name="payment" required>
+    <option value="">Wybierz metodę płatności</option>
+    <option value="blik">BLIK</option>
+    <option value="pobranie">Za pobraniem</option>
+  </select>
+  <textarea name="message" placeholder="Uwagi (np. rozmiar, wzór)" rows="4"></textarea>
+  <button type="submit">Zamawiam</button>
+</form>
+
 
 </body>
 
