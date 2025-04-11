@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEMESE - Spodnie Luzne</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f5f5f5;
+      color: #111;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #000;
+      color: red;
+      padding: 20px;
+      text-align: center;
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+    .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 40px;
+      background-color: white;
+    }
+    img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+    .details {
+      padding: 10px;
+    }
+    h2 {
+      margin-top: 0;
+    }
+    .price {
+      font-size: 24px;
+      color: green;
+      margin: 10px 0;
+    }
+    .btn {
+      padding: 10px 20px;
+      background-color: red;
+      color: white;
+      border: none;
+      font-size: 18px;
+      cursor: pointer;
+      border-radius: 8px;
+      margin-top: 10px;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #c40000;
+    }
+    .message {
+      display: none;
+      font-size: 18px;
+      color: green;
+      margin-top: 20px;
+    }
+    footer {
+      padding: 20px;
+      text-align: center;
+      background-color: #000;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>MEMESE - Spodnie luzne</header>
+
+  <div class="container">
+    <div>
+      <img src="all-over-print-unisex-wide-leg-pants-white-front-67f9579874fce.png" alt="Spodnie Memese">
+    </div>
+    <div class="details">
+      <h2>Spodnie luzne męskie - czarne / białe</h2>
+      <p>Opis: Są luźne, wygodne, dobre na co dzień. Dostępne w kolorach czarnym i białym. Rozmiary do XL.</p>
+      <p class="price">Cena: 99 zł</p>
+      <label for="rozmiar">Wybierz rozmiar:</label>
+      <select id="rozmiar">
+        <option>S</option>
+        <option>M</option>
+        <option>L</option>
+        <option>XL</option>
+      </select><br><br>
+      <button class="btn" onclick="kupTeraz()">Kup teraz</button>
+      <div id="thanksMessage" class="message">Dziękujemy za zakup! 🛍️</div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 MEMESE - Wszystkie prawa zastrzeżone
+  </footer>
+
+  <script>
+    function kupTeraz() {
+      const msg = document.getElementById("thanksMessage");
+      msg.style.display = "block";
+      setTimeout(() => {
+        msg.style.display = "none";
+      }, 4000);
+    }
+  </script>
+</body>
+</html>
