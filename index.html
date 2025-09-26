@@ -1,273 +1,122 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>MEMESE Store</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lookse</title>
   <style>
     body {
-      background-color: #111;
-      color: white;
-      font-family: 'Montserrat', sans-serif;
       margin: 0;
-      padding: 0;
-      transition: background 0.3s;
+      font-family: Arial, sans-serif;
+      background-color: #fff;
+      color: #000;
     }
-
     header {
-      background-color: #000;
-      padding: 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      color: red;
-      font-style: italic;
-      font-size: 36px;
-    }
-
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: #000;
-      padding: 10px;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .music-button, .toggle-theme {
-      background-color: red;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-weight: bold;
-      margin: 10px auto;
-      display: block;
-      cursor: pointer;
-    }
-
-    section {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    section h2 {
-      color: red;
-      font-size: 28px;
-      font-style: italic;
-      border-bottom: 1px solid red;
-      padding-bottom: 10px;
-      margin-bottom: 20px;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-    }
-
-    .product {
-      background-color: #222;
-      border-radius: 10px;
-      padding: 20px;
-      text-align: center;
-      transition: transform 0.2s;
-    }
-
-    .product:hover {
-      transform: scale(1.03);
-    }
-
-    .product img {
-      width: 100%;
-      border-radius: 10px;
-      height: auto;
-    }
-
-    .product h3 {
-      color: red;
-      margin-top: 15px;
-    }
-
-    .product p {
-      color: #ccc;
-      font-size: 14px;
-    }
-
-    .product button {
-      background-color: red;
-      color: white;
-      border: none;
-      padding: 10px 20px;
-      border-radius: 5px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    #cart {
-      background-color: #222;
-      padding: 20px;
-      border-radius: 10px;
-      margin-top: 40px;
-    }
-
-    #cart ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    #cart li {
+      background: #000;
+      color: #fff;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
-      margin: 10px 0;
-      border-bottom: 1px solid #444;
+      align-items: center;
     }
-
-    #thankYouMessage {
-      display: none;
-      color: lime;
-      font-weight: bold;
-      margin-top: 20px;
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #ccc;
+    }
+    .hero {
+      height: 80vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      font-size: 20px;
+      background: #f4f4f4;
     }
-
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      max-width: 600px;
+    }
     footer {
-      background-color: #000;
-      color: #777;
+      background: #000;
+      color: #fff;
       text-align: center;
-      padding: 20px;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .lang-switch {
+      margin-left: 2rem;
+    }
+    button {
+      background: none;
+      border: 1px solid #fff;
+      color: #fff;
+      padding: 0.3rem 0.7rem;
+      margin-left: 0.5rem;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    button:hover {
+      background: #fff;
+      color: #000;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>MEMESE STORE</h1>
+    <h1>Lookse</h1>
+    <nav>
+      <a href="#home" data-pl="Strona główna" data-en="Home">Strona główna</a>
+      <a href="#about" data-pl="O nas" data-en="About">O nas</a>
+      <a href="#shop" data-pl="Sklep" data-en="Shop">Sklep</a>
+      <a href="#contact" data-pl="Kontakt" data-en="Contact">Kontakt</a>
+      <span class="lang-switch">
+        <button onclick="setLang('pl')">PL</button>
+        <button onclick="setLang('en')">EN</button>
+      </span>
+    </nav>
   </header>
 
-  <button class="music-button" onclick="playMusic()">🎵 Włącz muzykę</button>
-  <button class="toggle-theme" onclick="toggleTheme()">🌓 Przełącz motyw</button>
-
-  <audio id="music" loop>
-    <source src="https://files.catbox.moe/y9yrrb.mp3" type="audio/mpeg">
-    Twoja przeglądarka nie obsługuje odtwarzania muzyki.
-  </audio>
-
-  <nav>
-    <a href="#produkty">Produkty</a>
-    <a href="#kontakt">Kontakt</a>
-    <a href="#koszyk">Koszyk</a>
-  </nav>
-
-  <section id="produkty">
-    <h2>Produkty</h2>
-    <div class="products">
-      <div class="product">
-        <img src="img/spodnie1.png" alt="Spodnie">
-        <h3>Spodnie MEMESE</h3>
-        <p>Cena: 149 zł</p>
-        <button onclick="addToCart('Spodnie MEMESE', 149)">Dodaj do koszyka</button>
-      </div>
-      <div class="product">
-        <img src="img/koszulka1.png" alt="Koszulka">
-        <h3>Koszulka MEMESE</h3>
-        <p>Cena: 99 zł</p>
-        <button onclick="addToCart('Koszulka MEMESE', 99)">Dodaj do koszyka</button>
-      </div>
-    </div>
-  </section>
-
-  <section id="koszyk">
-    <h2>Koszyk</h2>
-    <div id="cart">
-      <ul id="cartItems"></ul>
-      <p><strong>Suma:</strong> <span id="totalPrice">0</span> zł</p>
-      <button onclick="checkout()">Kup teraz</button>
-      <div id="thankYouMessage">Dziękujemy za zakup! 🎉</div>
-    </div>
-  </section>
-
-  <section id="kontakt">
-    <h2>Kontakt i formularz</h2>
-    <form action="#" onsubmit="event.preventDefault(); alert('Formularz wysłany!')">
-      <label>Email: <input type="email" required></label><br><br>
-      <label>Wiadomość:<br><textarea rows="4" required></textarea></label><br><br>
-      <button type="submit">Wyślij</button>
-    </form>
-  </section>
-
-  <section id="ankieta">
-    <h2>Ankieta</h2>
-    <p>Jaki produkt chcesz zobaczyć w sklepie?</p>
-    <form onsubmit="event.preventDefault(); alert('Dzięki za opinię!')">
-      <input type="text" placeholder="Napisz tu...">
-      <button type="submit">Wyślij</button>
-    </form>
+  <section class="hero" id="home">
+    <h2 data-pl="Witaj w Lookse" data-en="Welcome to Lookse">Witaj w Lookse</h2>
+    <p data-pl="Nowoczesny styl inspirowany Nike. Wkrótce dostępne koszulki i więcej!" 
+       data-en="Modern style inspired by Nike. T-shirts and more coming soon!">
+       Nowoczesny styl inspirowany Nike. Wkrótce dostępne koszulki i więcej!
+    </p>
   </section>
 
   <footer>
-    &copy; 2025 MEMESE STORE. Wszystkie prawa zastrzeżone.
+    <p>&copy; 2025 Lookse. All rights reserved.</p>
   </footer>
 
+  <!-- Background music (autoplay may be blocked on some browsers) -->
+  <audio id="bg-music" autoplay loop>
+    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+
   <script>
-    const cartItems = [];
-
-    function playMusic() {
-      document.getElementById('music').play();
-    }
-
-    function toggleTheme() {
-      document.body.style.backgroundColor = document.body.style.backgroundColor === 'white' ? '#111' : 'white';
-      document.body.style.color = document.body.style.color === 'black' ? 'white' : 'black';
-    }
-
-    function addToCart(name, price) {
-      cartItems.push({ name, price });
-      updateCart();
-    }
-
-    function removeFromCart(index) {
-      cartItems.splice(index, 1);
-      updateCart();
-    }
-
-    function updateCart() {
-      const cartList = document.getElementById('cartItems');
-      const totalPriceEl = document.getElementById('totalPrice');
-      cartList.innerHTML = '';
-      let total = 0;
-      cartItems.forEach((item, index) => {
-        const li = document.createElement('li');
-        li.innerHTML = `${item.name} - ${item.price} zł <button onclick="removeFromCart(${index})">Usuń</button>`;
-        cartList.appendChild(li);
-        total += item.price;
+    function setLang(lang) {
+      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
+        el.textContent = el.getAttribute('data-' + lang);
       });
-      totalPriceEl.textContent = total;
-    }
-
-    function checkout() {
-      if (cartItems.length === 0) {
-        alert('Koszyk jest pusty!');
-        return;
-      }
-      document.getElementById('thankYouMessage').style.display = 'block';
-      cartItems.length = 0;
-      updateCart();
     }
   </script>
 </body>
 </html>
-
-
-
-
 
