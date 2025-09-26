@@ -1,122 +1,136 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lookse</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: #fff;
-      color: #000;
-    }
-    header {
-      background: #000;
-      color: #fff;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 1.5rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-    }
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 1.5rem;
-      font-size: 1rem;
-      transition: color 0.3s;
-    }
-    nav a:hover {
-      color: #ccc;
-    }
-    .hero {
-      height: 80vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      background: #f4f4f4;
-    }
-    .hero h2 {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-    }
-    .hero p {
-      font-size: 1.2rem;
-      max-width: 600px;
-    }
-    footer {
-      background: #000;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-    }
-    .lang-switch {
-      margin-left: 2rem;
-    }
-    button {
-      background: none;
-      border: 1px solid #fff;
-      color: #fff;
-      padding: 0.3rem 0.7rem;
-      margin-left: 0.5rem;
-      cursor: pointer;
-      border-radius: 5px;
-    }
-    button:hover {
-      background: #fff;
-      color: #000;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lookse — Streetwear</title>
+<style>
+/* ---- Reset & base ---- */
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--black:#000;--white:#fff;--muted:#888;--accent:#111;--max-w:1200px}
+html,body{height:100%}
+body{font-family:Inter,Arial,Helvetica,sans-serif;background:var(--white);color:var(--black);line-height:1.4}
+
+/* ---- Header ---- */
+.site-header{position:sticky;top:0;z-index:999;background:var(--white);border-bottom:1px solid #eee}
+.header-inner{max-width:var(--max-w);margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:1rem}
+.brand{font-weight:800;letter-spacing:3px;text-transform:uppercase;font-size:1.25rem}
+.nav-links{display:flex;gap:0.75rem}
+.nav-links a{color:var(--black);text-decoration:none;padding:0.4rem 0.6rem;border-radius:6px;font-weight:600}
+.nav-links a:hover{background:#f2f2f2}
+
+.taskbar{background:var(--black);color:var(--white);padding:0.6rem 0;display:flex;justify-content:center}
+.taskbar-inner{max-width:var(--max-w);display:flex;gap:1.25rem;align-items:center}
+.taskbar a{color:var(--white);text-decoration:none;font-weight:700;padding:0.4rem 0.6rem}
+.taskbar a:hover{opacity:0.85}
+
+.hero{max-width:var(--max-w);margin:2rem auto;padding:2rem;display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center}
+.hero-left h1{font-size:3rem;letter-spacing:4px;margin-bottom:0.5rem}
+.hero-left p{color:var(--muted);font-size:1.05rem}
+.hero-right{background:#f6f6f6;padding:1.25rem;border-radius:10px;display:flex;flex-direction:column;gap:0.75rem;align-items:center}
+.cta{display:inline-block;padding:0.75rem 1.25rem;border-radius:40px;border:2px solid var(--black);text-transform:uppercase;font-weight:800}
+.controls-row{max-width:var(--max-w);margin:1rem auto;display:flex;justify-content:space-between;gap:1rem;padding:0 1rem}
+.search{flex:1}
+.search input{width:100%;padding:0.75rem;border:1px solid #ddd;border-radius:8px}
+.mini-actions{display:flex;gap:0.5rem}
+.icon-btn{background:none;border:1px solid #000;padding:0.5rem 0.7rem;border-radius:8px;cursor:pointer}
+.products{max-width:var(--max-w);margin:1rem auto;padding:1rem;display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.card{border:1px solid #eee;padding:0.75rem;border-radius:10px;background:var(--white);display:flex;flex-direction:column;gap:0.75rem}
+.card img{width:100%;height:220px;object-fit:cover;border-radius:8px}
+.card .title{font-weight:700}
+.card .price{color:var(--muted);font-weight:700}
+.card .actions{margin-top:auto;display:flex;gap:0.5rem}
+.btn{flex:1;padding:0.5rem;border-radius:8px;border:1px solid var(--black);background:var(--black);color:var(--white);font-weight:700;cursor:pointer}
+.btn.alt{background:transparent;color:var(--black)}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,0.6);display:none;align-items:center;justify-content:center;padding:1rem}
+.modal.open{display:flex}
+.modal-card{background:var(--white);max-width:900px;width:100%;border-radius:10px;overflow:hidden;display:grid;grid-template-columns:1fr 1fr}
+.modal-card img{width:100%;height:100%;object-fit:cover}
+.modal-body{padding:1rem;display:flex;flex-direction:column;gap:0.75rem}
+.cart-drawer{position:fixed;right:0;top:0;height:100%;width:360px;background:var(--white);box-shadow:-12px 0 24px rgba(0,0,0,0.15);transform:translateX(100%);transition:transform .25s ease;z-index:1200;padding:1rem;display:flex;flex-direction:column}
+.cart-drawer.open{transform:translateX(0)}
+.cart-items{flex:1;overflow:auto;margin-top:0.5rem}
+.cart-item{display:flex;gap:0.5rem;align-items:center;padding:0.5rem 0;border-bottom:1px solid #eee}
+footer{background:#111;color:#fff;padding:2rem 1rem;margin-top:2rem}
+.footer-inner{max-width:var(--max-w);margin:0 auto;display:flex;justify-content:space-between;gap:1rem}
+.hide-mobile{display:inline-block}
+@media (max-width:900px){.hero{grid-template-columns:1fr}.products{grid-template-columns:repeat(2,1fr)}.hide-mobile{display:none}}
+@media (max-width:520px){.products{grid-template-columns:1fr}.header-inner{padding:0.6rem}.brand{font-size:1rem}}
+</style>
 </head>
 <body>
-  <header>
-    <h1>Lookse</h1>
-    <nav>
-      <a href="#home" data-pl="Strona główna" data-en="Home">Strona główna</a>
-      <a href="#about" data-pl="O nas" data-en="About">O nas</a>
-      <a href="#shop" data-pl="Sklep" data-en="Shop">Sklep</a>
-      <a href="#contact" data-pl="Kontakt" data-en="Contact">Kontakt</a>
-      <span class="lang-switch">
-        <button onclick="setLang('pl')">PL</button>
-        <button onclick="setLang('en')">EN</button>
-      </span>
-    </nav>
-  </header>
-
-  <section class="hero" id="home">
-    <h2 data-pl="Witaj w Lookse" data-en="Welcome to Lookse">Witaj w Lookse</h2>
-    <p data-pl="Nowoczesny styl inspirowany Nike. Wkrótce dostępne koszulki i więcej!" 
-       data-en="Modern style inspired by Nike. T-shirts and more coming soon!">
-       Nowoczesny styl inspirowany Nike. Wkrótce dostępne koszulki i więcej!
-    </p>
-  </section>
-
-  <footer>
-    <p>&copy; 2025 Lookse. All rights reserved.</p>
-  </footer>
-
-  <!-- Background music (autoplay may be blocked on some browsers) -->
-  <audio id="bg-music" autoplay loop>
-    <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
-    Your browser does not support the audio element.
-  </audio>
-
-  <script>
-    function setLang(lang) {
-      document.querySelectorAll('[data-' + lang + ']').forEach(el => {
-        el.textContent = el.getAttribute('data-' + lang);
-      });
-    }
-  </script>
-</body>
-</html>
+<header class="site-header">
+<div class="header-inner">
+<div style="display:flex;align-items:center;gap:1rem">
+<div class="brand">LOOKSE</div>
+<nav class="nav-links hide-mobile">
+<a href="#collections" data-pl="Kolekcje" data-en="Collections">Kolekcje</a>
+<a href="#new" data-pl="Nowości" data-en="New">Nowości</a>
+<a href="#drops" data-pl="Drops" data-en="Drops">Drops</a>
+<a href="#about" data-pl="O nas" data-en="About">O nas</a>
+</nav>
+</div>
+<div class="top-controls">
+<div style="display:flex;align-items:center;gap:0.5rem">
+<button class="icon-btn" id="langBtn">PL</button>
+<button class="icon-btn" id="cartBtn" aria-label="Koszyk">Koszyk (0)</button>
+</div>
+</div>
+</div>
+</header>
+<div class="taskbar">
+<div class="taskbar-inner">
+<a href="#men" data-pl="Mężczyźni" data-en="Men">Mężczyźni</a>
+<a href="#women" data-pl="Kobiety" data-en="Women">Kobiety</a>
+<a href="#kids" data-pl="Dzieci" data-en="Kids">Dzieci</a>
+<a href="#shirts" data-pl="Koszulki" data-en="T-Shirts">Koszulki</a>
+<a href="#shoes" data-pl="Buty" data-en="Shoes">Buty</a>
+<a href="#accessories" data-pl="Akcesoria" data-en="Accessories">Akcesoria</a>
+</div>
+</div>
+<main>
+<section class="hero" id="home">
+<div class="hero-left">
+<h1 data-pl="Nowoczesny minimalizm" data-en="Modern Minimalism">Nowoczesny minimalizm</h1>
+<p data-pl="Lookse — marka streetwearowa inspirowana funkcjonalnością i czystą formą. Kolekcje wkrótce." data-en="Lookse — a streetwear brand inspired by function and clean form. Collections coming soon.">Lookse — marka streetwearowa inspirowana funkcjonalnością i czystą formą. Kolekcje wkrótce.</p>
+<div style="margin-top:1rem">
+<a class="cta" href="#shop" data-pl="Zobacz kolekcję" data-en="View Collection">Zobacz kolekcję</a>
+</div>
+</div>
+<aside class="hero-right">
+<div style="font-weight:800;letter-spacing:2px">LIMITED DROP</div>
+<div style="font-size:0.9rem;color:var(--muted)">Subtelne logo, mocna jakość</div>
+<div style="margin-top:0.5rem;width:100%">
+<img src="https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="lookse sample" style="width:100%;border-radius:8px;object-fit:cover;height:180px">
+</div>
+</aside>
+</section>
+<div class="controls-row">
+<div class="search"><input id="searchInput" placeholder="Szukaj produktów..." data-pl-placeholder="Szukaj produktów..." data-en-placeholder="Search products..."/></div>
+<div class="mini-actions">
+<button class="icon-btn" id="filterBtn" data-pl="Filtruj" data-en="Filter">Filtruj</button>
+<button class="icon-btn" id="sortBtn" data-pl="Sortuj" data-en="Sort">Sortuj</button>
+</div>
+</div>
+<section class="products" id="shop">
+<!-- Sample product cards -->
+<article class="card" data-id="p1" data-title-pl="Koszulka Icon" data-title-en="Icon Tee" data-price="129">
+<img src="https://images.unsplash.com/photo-1520975918663-6b1d8d4fb0b8?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Koszulka">
+<div class="title">Koszulka Icon</div>
+<div class="price">129 PLN</div>
+<div class="actions">
+<button class="btn" onclick="openProduct(this.closest('.card'))">Szczegóły</button>
+<button class="btn alt" onclick="addToCart('p1')">Do koszyka</button>
+</div>
+</article>
+</section>
+</main>
+<footer>
+<div class="footer-inner">
+<div>
+<div style="font-weight:800;letter-spacing:2px">LOOKSE</div>
+<div style="color:var(--muted);margin-top:0.5rem">Minimalistyczny streetwear. Projekt autorski — bez kradzieży marki.</div>
+</div>
+<div>
+<div style
 
